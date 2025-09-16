@@ -1,0 +1,29 @@
+.burgerMenuContainer {
+    position: relative;
+    
+}
+@media (min-width: 920px) {
+        .burgerMenuContainer {
+        display: none;
+        }
+    }
+.burgerIcon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+.link {
+    color: var(--primary-color);
+}
+.nav {
+  position: absolute;
+  top: 1.75rem; 
+  right: 0;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  width: 200px;
+  border-radius: 8px;
+}
