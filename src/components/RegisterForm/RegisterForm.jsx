@@ -47,7 +47,7 @@ const RegisterForm = () => {
     }
 
     try {
-      const response = await fetch("https://auth-service-h8h9frbcdpekcdb2.canadacentral-01.azurewebsites.net/signup", {
+      const response = await fetch("https://group-project-authservice-ebbpd0c8g2fabqdr.swedencentral-01.azurewebsites.net/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
