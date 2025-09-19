@@ -1,0 +1,20 @@
+.container {
+
+    padding: 2rem;
+}
+
+.cardGrid {
+    width: calc(100dvw - 323px);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(299px, 1fr));
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    gap: 1.5rem;
+    /* padding: 2rem; */
+    place-items: center;
+    
+}
+
+.heading {
+    font: var(--heading-big);
+    margin-bottom: 1.5rem;
+}
