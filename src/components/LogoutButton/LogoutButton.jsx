@@ -18,7 +18,7 @@ if (!token) {
     return null;
 }
   return (
-     <button className={styles.btn-logout} onClick={handleLogout}>
+     <button className={styles.btnLogout} onClick={handleLogout}>
       Sign out
     </button>
   );
