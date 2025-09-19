@@ -73,3 +73,9 @@
   color: var(--primary-color);
   text-decoration: none;
 }
+
+.error {
+  color: red;
+  font-size: .8rem;
+  margin-top: .2rem;
+}
