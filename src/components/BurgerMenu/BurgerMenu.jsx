@@ -10,12 +10,12 @@ const BurgerMenu = () => {
     useClickOutsideElement(burgerMenuContainerRef, ClickOutSideOfBurgerMenuCallBack)
 
     function ClickOutSideOfBurgerMenuCallBack() {
-        setOpen(!open)
+        setOpen(false)
     }
 
   return (
     <div className={styles.burgerMenuContainer} ref={burgerMenuContainerRef}>
-      <FontAwesomeIcon icon={faBars} className={styles.burgerIcon} onClick={() => setOpen(!open)}/>
+      <FontAwesomeIcon icon={faBars} className={styles.burgerIcon} onClick={() => setOpen(true)}/>
       { open && <nav className={styles.nav}>
         <a className={styles.link} href="/">Home</a>
         <a className={styles.link} href="/contact">Contact</a>
