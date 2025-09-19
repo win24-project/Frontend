@@ -11,6 +11,7 @@ export const NavBar = () => {
           <nav className={styles.nav}>
             <a href="/">Home</a>
             <a href="/contact">Contact</a>
+            <a href="/klasser">Pass</a>
           </nav>
         </div>
       </header>

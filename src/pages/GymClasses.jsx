@@ -1,7 +1,10 @@
+import GymClassList from '../components/GymClassList/GymClassList'
 
-export const GymClasses = () => {
+const GymClasses = () => {
   return (
-    <GymClasses/>
+    <GymClassList/>
   )
 }
+
+export default GymClasses
 

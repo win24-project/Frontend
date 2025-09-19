@@ -19,6 +19,7 @@ const BurgerMenu = () => {
       { open && <nav className={styles.nav}>
         <a className={styles.link} href="/">Home</a>
         <a className={styles.link} href="/contact">Contact</a>
+        <a className={styles.link} href="/klasser">Pass</a>
       </nav> }
     </div>
   )
