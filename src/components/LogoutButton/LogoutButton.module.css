@@ -1,0 +1,9 @@
+.btn-logout {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 16px;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+
+}
