@@ -62,7 +62,7 @@ const RegisterForm = () => {
       if (response.ok) {
         const data = await response.json();
         console.log("Signup successful:", data);
-        navigate("/");
+        navigate("/login");
       } else {
         const errorText = await response.text();
         console.log("Signup failed:", errorText);
