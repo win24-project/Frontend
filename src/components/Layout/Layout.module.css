@@ -6,8 +6,6 @@
 
 .main {
   flex: 1;
-  /* max-width: 1200px; */
   max-width: 100dvw;
   margin: 0 auto;
-  padding: 1.5rem;
 }

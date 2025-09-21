@@ -1,6 +1,6 @@
 .burgerMenuContainer {
     position: relative;
-    
+    z-index: 100;
 }
 @media (min-width: 920px) {
         .burgerMenuContainer {
