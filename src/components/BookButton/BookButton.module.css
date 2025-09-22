@@ -1,0 +1,12 @@
+.book-button {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font: var(--text);
+  padding: 0.3rem 1.7rem;
+  transition: 0.3s ease;
+}
+.book-button:hover {
+  background-color: var(--highlight);
+}
