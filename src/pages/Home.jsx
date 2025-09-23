@@ -1,10 +1,10 @@
 import HomePage from '../components/HomePage/HomePage'
 
-const HomePage = () => {
+const Home = () => {
   return (
     <HomePage/>
   )
 }
 
-export default HomePage
+export default Home
 
