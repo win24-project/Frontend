@@ -1,8 +1,10 @@
+import HomePage from '../components/HomePage/HomePage'
 
-const Home = () => {
+const HomePage = () => {
   return (
-    <div>Home Page</div>
+    <HomePage/>
   )
 }
 
-export default Home
+export default HomePage
+

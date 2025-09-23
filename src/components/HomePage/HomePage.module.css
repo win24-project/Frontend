@@ -1,0 +1,145 @@
+/* Hero */
+.hero {
+  height: 70vh;
+  background: url("https://images.unsplash.com/photo-1558611848-73f7eb4001a1?ixlib=rb-4.0.3&q=80")
+    no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.heroOverlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.heroOverlay h1 {
+  font: var(--heading-big);
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.heroOverlay p {
+  font: var(--heading-medium);
+  color: var(--highlight);
+}
+
+/* Intro */
+.intro {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro h2 {
+  font: var(--heading-big);
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  font: var(--text);
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+/* Pass */
+.passes {
+  background: var(--highlight);
+  padding: 3rem 1.5rem;
+}
+
+.passes h2 {
+  text-align: center;
+  font: var(--heading-big);
+  color: var(--secondary-color);
+  margin-bottom: 2rem;
+}
+
+.passGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.passCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.passCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.passCard h3 {
+  font: var(--heading-medium);
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.passCard p {
+  font: var(--text);
+  color: var(--secondary-color);
+}
+
+/* Coaches */
+.coaches {
+  padding: 3rem 1.5rem;
+}
+
+.coaches h2 {
+  text-align: center;
+  font: var(--heading-big);
+  color: var(--secondary-color);
+  margin-bottom: 2rem;
+}
+
+.coachGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.coachCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.coachCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.coachCard img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.coachInfo {
+  padding: 1rem;
+}
+
+.coachInfo h3 {
+  font: var(--heading-medium);
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
+}
+
+.coachInfo p {
+  font: var(--text);
+  color: var(--secondary-color);
+}
