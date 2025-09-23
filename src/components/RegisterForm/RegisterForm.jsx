@@ -77,7 +77,8 @@ const RegisterForm = () => {
   return (
     <div className={styles.registerWrapper}>
       <form className={styles.form} onSubmit={handleSubmit} noValidate>
-        <h2 className={styles.title}>Sign up</h2>
+        <h2 className={styles.title}>Become a member</h2>
+        <p className={styles.infoText}>Start your membership today from $39/month and unlock all our classes!</p>
 
         <div className={styles.field}>
           <label>Email</label>
@@ -112,7 +113,7 @@ const RegisterForm = () => {
           {errors.confirmPassword && <span className={styles.error}>{errors.confirmPassword}</span>}
         </div>
 
-        <button type="submit" className={styles.button}>Sign up</button>
+        <button type="submit" className={styles.button}>Become a member</button>
 
         <div className={styles.redirectLogin}>
           <p>Already a member? <a href="/login">Login here</a></p>
