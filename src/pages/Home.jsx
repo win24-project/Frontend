@@ -1,9 +1,10 @@
-import HeroSection from "../components/HeroSection/HeroSection"
+import HomePage from '../components/HomePage/HomePage'
 
-const Home = () => {
+const HomePage = () => {
   return (
-    <HeroSection/>
+    <HomePage/>
   )
 }
 
-export default Home
+export default HomePage
+
