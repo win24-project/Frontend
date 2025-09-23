@@ -19,7 +19,6 @@ export const NavBar = () => {
           <BurgerMenu/>
           <nav className={styles.nav}>
             <a href="/">Home</a>
-            <a href="/contact">Contact</a>
             <a href="/classes">Classes</a>
             {isLoggedIn ? (
               <a href="/" onClick={handleLogout}>Log out</a>
