@@ -1,6 +1,6 @@
 import { Footer } from "../Footer/Footer"
 import { NavBar } from "../NavBar/NavBar"
-import { NavBar } from "../Home/HomePage"
+import { HomePage } from "../Home/HomePage"
 
 import styles from './Layout.module.css'
 
