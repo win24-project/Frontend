@@ -4,6 +4,7 @@ import Contact from './pages/Contact';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import GymClasses from './pages/GymClasses';
+import SelectMembership from './pages/SelectMembership';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path='/register' element={<Register/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/classes' element={<GymClasses/>}/>
+      <Route path='/membership' element={<SelectMembership />}/>
     </Routes>
   )
 }
