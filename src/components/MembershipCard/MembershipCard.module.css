@@ -26,9 +26,43 @@
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
   width: 280px;
-  transition: transform .2s;
+  min-height: 350px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .cardInner {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  padding: 2rem;
+  box-sizing: border-box;
+  background: #fff;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.back {
+  transform: rotateY(180deg);
 }
 
 .card:hover {
@@ -46,7 +80,14 @@
 .price {
   font-size: 1.7rem;
   font-weight: bold;
-  margin: .5rem 0 1.3rem 0;
+  margin: 0;
+  color: var(--dark-color);
+}
+
+.introText {
+  margin: 0;
+  text-align: left;
+  font-size: .9rem;
 }
 
 .benefits {
@@ -57,10 +98,16 @@
 }
 
 .benefits li {
+  font-size: .9rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 0.5rem;
   color: var(--dark-color);
+}
+
+.benefits li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .chooseBtn {
@@ -79,4 +126,9 @@
 
 .chooseBtn:hover {
   background-color: #eb7b52;
+}
+
+.buttons {
+  display: flex;
+  gap: .8rem;
 }
