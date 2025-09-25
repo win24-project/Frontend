@@ -1,4 +1,4 @@
-.book-button {
+.bookButton {
   background-color: var(--primary-color);
   border: none;
   border-radius: 12px;
@@ -7,6 +7,6 @@
   padding: 0.3rem 1.7rem;
   transition: 0.3s ease;
 }
-.book-button:hover {
+.bookButton:hover {
   background-color: var(--highlight);
 }
