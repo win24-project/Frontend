@@ -2,13 +2,23 @@
     background-color: #fff;
     color: #000;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4), 1px 1px 10px rgba(0, 0, 0, 0.2);
-    padding: 12px;
+    padding: 16px;
     border-radius: 1rem;
-    width: 275px;
-    height: 345px;
+    width: 350px;
+    height: 420px;
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: min-content min-content min-content auto min-content;
     gap: .6rem;
+
+    :hover {
+        cursor: pointer;
+    }
+}
+
+.cardFlex {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 3rem; */
 }
 
 .cardImage {
@@ -22,6 +32,26 @@
 
 
 .cardTitle {
+    font-family: var(--font-family);
+    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.cardDate {
+    font-family: var(--font-family);
+    font-size: 12px;
+}
+.cardLocation {
+    font-family: var(--font-family);
+    font-size: 12px;
+}
+.cardDescription {
+    font-family: var(--font-family);
+    margin: 0.6rem 0 0 0;
+    font-size: 14px;
+}
+.cardTrainer {
     font-family: var(--font-family);
 }
 
