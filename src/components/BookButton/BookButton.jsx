@@ -26,11 +26,14 @@ export default function BookButton({ gymClassId }) {
         }
 
         try {
-            const response = await fetch(`https://group-project-bookingservice-f9bdbnftb0c6g2aa.swedencentral-01.azurewebsites.net/api/UserBooking?gym-class-id=${gymClassId}`, 
+            const response = await fetch(`https://group-project-bookingservice-f9bdbnftb0c6g2aa.swedencentral-01.azurewebsites.net/api/UserBooking`, 
                 { method: "POST", 
                   headers: {
                     Authorization: `Bearer ${accessToken}`
-                  }
+                  },
+                  body: JSON.stringify({
+                    gymClassId: gymClassId
+                  })
                 });
             if(response.status === 403 ||  response.status === 403) {
                 navigate('/login') 
