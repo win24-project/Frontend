@@ -20,14 +20,14 @@ const GymClassList = () => {
    }, [])
 
   return (
-    <>
+    <div className={styles.container}>
       <h2 className={styles.heading}>Available Gym Classes</h2>
       <div className={styles.cardGrid}>
         {
           classes.map(info => (<GymClassCard key={info.id} item={info} />))
         }
       </div>
-    </>
+    </div>
 
   )
 }
