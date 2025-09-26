@@ -26,12 +26,17 @@ const GymClassCard = ({item}) => {
       <div className={style.card}>
           <div className={style.cardImage}></div>
           <h2 className={style.cardTitle}>{item.title}</h2>
-          <div className={style.cardFlex}>
+          <div className={style.cardFlex1}>
             <div className={style.cardDate}>{formatEventDate(item.date)}</div>
-            <div className={style.cardLocation}>Plats: {item.location}</div>
+            <div className={style.cardLocation}>Anläggning: {item.location}</div>
           </div>
           <p className={style.cardDescription}>{item.description}</p>
-          <BookButton />
+          <div className={style.cardFlex2}>
+            <BookButton />
+            <div className={style.cardTrainer}>Instruktör: {item.instructor}</div>
+          </div>
+          <div className={style.cardMaxParticipants}>Platser: {item.maxNumOfParticipants}</div>
+          
       </div>
     </>
 
