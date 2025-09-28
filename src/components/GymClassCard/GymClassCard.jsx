@@ -1,7 +1,7 @@
 import style from './GymClassCard.module.css'
 import BookButton from '../BookButton/BookButton'
 
-const GymClassCard = ({item}) => {
+const GymClassCard = ({ item }) => {
 
   const formatEventDate = (isoDateString) => {
     const date = new Date(isoDateString)
@@ -32,11 +32,10 @@ const GymClassCard = ({item}) => {
           </div>
           <p className={style.cardDescription}>{item.description}</p>
           <div className={style.cardFlex2}>
-            <BookButton />
+            <BookButton gymClassId={item.id} />
             <div className={style.cardTrainer}>Instruktör: {item.instructor}</div>
           </div>
           <div className={style.cardMaxParticipants}>Platser: {item.maxNumOfParticipants}</div>
-          
       </div>
     </>
 
