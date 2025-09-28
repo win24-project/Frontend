@@ -5,6 +5,8 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import GymClasses from './pages/GymClasses';
 import SelectMembership from './pages/SelectMembership';
+import ConfirmEmail from './pages/ConfirmEmail';
+import ResendConfirmationEmail from './pages/ResendConfirmationEmail';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path='/classes' element={<GymClasses/>}/>
       <Route path='/membership' element={<SelectMembership />}/>
+      <Route path='/confirm-email' element={<ConfirmEmail />}/>
+      <Route path='/resend-email-confirmation' element={<ResendConfirmationEmail />}/>
     </Routes>
   )
 }
