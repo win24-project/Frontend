@@ -52,10 +52,10 @@ export default function BookButton({ gymClassId }) {
     }
 
     return (
-        <div>
-            <button className={styles.bookButton} onClick={() => handleBooking(gymClassId)} disabled={loading}> <span>{loading ? "booking..." : "book"}</span></button>
-            {message && <div className="success-message">{message}</div>}
-            {error && <div className="error-message">{error}</div>}
+        <div className={styles["book-button-container"]}>
+            <button className={styles["book-button"]} onClick={() => handleBooking(gymClassId)} disabled={loading}> <span>{loading ? "Booking..." : "Book"}</span></button>
+            {message && <div>{message}</div>}
+            {error && <div>{error}</div>}
         </div>
     );
 }
