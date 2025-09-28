@@ -9,15 +9,24 @@
     display: grid;
     grid-template-rows: min-content min-content min-content auto min-content;
     gap: .6rem;
+    position: relative;
 
     :hover {
         cursor: pointer;
     }
 }
 
-.cardFlex {
+.cardFlex1 {
     display: flex;
     justify-content: space-between;
+    /* gap: 3rem; */
+}
+
+.cardFlex2 {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    
     /* gap: 3rem; */
 }
 
@@ -53,13 +62,30 @@
 }
 .cardTrainer {
     font-family: var(--font-family);
+    margin-left: .7rem;
+    font-size: 14px;
+}
+.cardMaxParticipants {
+    font-family: var(--font-family);
+    font-size: 14px;
+    position: absolute;
+    right: 35px;
+    top: 30px;
+    background-color: #0000004d;
+    color: #fff;
+    padding: .3rem;
+    border-radius: .5rem;
 }
 
-/* .cardInfo {
 
-} */
 
-/* .cardDateTime {
-    display: flex;
-    gap: 1rem;
+
+/*Kommentera tillbaka detta när en userstory för responsivitet är fixad någon vill fixa det*/
+
+/* @media (max-width: 768px) {
+    .card {
+        width: 280px;
+        height: 350px;
+        grid-template-rows: min-content min-content min-content auto min-content;
+    }
 } */
