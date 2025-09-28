@@ -1,29 +1,48 @@
-import React, {useState} from "react";
+import {useState} from "react";
+import { useNavigate  } from "react-router";
 import styles from "./BookButton.module.css";
 
-
-export default function BookButton() {
+export default function BookButton({ gymClassId }) {
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState(null);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
-    async function handleBooking() {
+    async function handleBooking( gymClassId) {
         setLoading(true);
         setMessage(null);
         setError(null);
 
-        try {
-            const response = await fetch("https://group-project-bookingservice-f9bdbnftb0c6g2aa.swedencentral-01.azurewebsites.net/api/UserBooking", { method: "POST" });
+        if(!gymClassId) {
+            setLoading(false)
+            return
+        }
 
-            if (!response.ok) {
-                throw new Error(`Error: ${response.status}`);
+        const accessToken = localStorage.getItem('token')
+        if(!accessToken) {
+            setLoading(false)
+            navigate('/login')
+            return 
+        }
+
+        try {
+            const response = await fetch(`https://group-project-bookingservice-f9bdbnftb0c6g2aa.swedencentral-01.azurewebsites.net/api/UserBooking`, 
+                { method: "POST", 
+                  headers: {
+                    Authorization: `Bearer ${accessToken}`
+                  },
+                  body: JSON.stringify({
+                    gymClassId: gymClassId
+                  })
+                });
+            if(response.status === 403 ||  response.status === 403) {
+                navigate('/login') 
+                return
             }
+            if (!response.ok) throw new Error(`Error: ${response.status}`);
 
             const data = await response.json();
-
-            const bookingId = data.bookingId ?? data.BookingId ?? data.id ?? data.Id;
-            const text = data.message ?? data.Message ?? "Booking successful!";
-
+            const text = data.message ?? "Booking successful!";
             setMessage(`${text}`);
         } catch (err) {
             setError(err.message || "An error occurred during booking.");
@@ -34,7 +53,7 @@ export default function BookButton() {
 
     return (
         <div className={styles["book-button-container"]}>
-            <button className={styles["book-button"]} onClick={handleBooking} disabled={loading}> <span>{loading ? "Booking..." : "Book"}</span></button>
+            <button className={styles["book-button"]} onClick={() => handleBooking(gymClassId)} disabled={loading}> <span>{loading ? "Booking..." : "Book"}</span></button>
             {message && <div>{message}</div>}
             {error && <div>{error}</div>}
         </div>
