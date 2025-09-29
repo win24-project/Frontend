@@ -1,9 +1,9 @@
 import React from 'react'
-import ResendEmailConfirmationButton from '../components/ResendEmailConfirmationButton/ResendEmailConfirmationButton'
+import ResendEmailConfirmationForm from '../components/ResendEmailConfirmationButton/ResendEmailConfirmationForm'
 
 function ResendConfirmationEmail() {
   return (
-    <ResendEmailConfirmationButton/>
+    <ResendEmailConfirmationForm/>
   )
 }
 

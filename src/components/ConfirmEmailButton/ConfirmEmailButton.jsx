@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
+import styles  from './ConfirmEmailButton.module.css'
 
 function ConfirmEmail() {
   const [searchParams] = useSearchParams();
@@ -29,9 +30,9 @@ function ConfirmEmail() {
   }
 
   return (
-    <div>
-      <button onClick={handleConfirmEmail}>Confirm Email: {email}</button>
-      {error && <p>{error}</p> }
+    <div className={styles.container}>
+      <button className={styles.confirmButton} onClick={handleConfirmEmail}>Confirm Email: {email}</button>
+      {error && <p className={styles.error}>{error}</p> }
     </div>
   )
 }
