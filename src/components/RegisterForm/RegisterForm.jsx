@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import styles from './RegisterForm.module.css';
-import { useNavigate } from 'react-router';
 
 const RegisterForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState({});
-  const navigate = useNavigate();
 
   const validateForm = () => {
     const newErrors = {};
@@ -62,7 +60,7 @@ const RegisterForm = () => {
       if (response.ok) {
         const data = await response.json();
         console.log("Signup successful:", data);
-        navigate("/login");
+        alert("Signup Successful, an email confirmation link is sent to your email");
       } else {
         const errorText = await response.text();
         console.log("Signup failed:", errorText);

@@ -16,6 +16,7 @@ body {
 --accent: #BFC0C0;
 --highlight: #D6D6D6;
 --dark-color: #0E0E0E;
+--error: #dc2626;
 /* typeography */
 --font-family:"Roboto", sans-serif; 
 --heading-extra-big: 900 2rem var(--font-family); 
