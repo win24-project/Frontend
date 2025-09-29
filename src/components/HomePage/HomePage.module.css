@@ -45,6 +45,7 @@
   font: var(--text);
   color: var(--dark-color);
   line-height: 1.6;
+  font-size: 1rem;
 }
 
 /* Pass */
@@ -89,6 +90,16 @@
 .passCard p {
   font: var(--text);
   color: var(--secondary-color);
+  font-size: 12px;
+}
+/* Pass images */
+.passCard img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: block;
 }
 
 /* Coaches */
@@ -142,4 +153,5 @@
 .coachInfo p {
   font: var(--text);
   color: var(--secondary-color);
+  font-size: 12px;
 }
