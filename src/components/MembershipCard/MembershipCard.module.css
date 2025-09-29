@@ -1,0 +1,168 @@
+.membershipWrapper {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.membershipWrapper h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.membershipWrapper p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.card {
+  width: 280px;
+  height: 360px;
+  perspective: 1000px;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card.flipped .cardInner {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.front {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .cardInner {
+  transform: rotateY(180deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.card h2 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: var(--dark-color);
+  margin: 0;
+}
+
+.price {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--dark-color);
+}
+
+.introText {
+  margin: 0;
+  text-align: left;
+  font-size: .9rem;
+}
+
+.introText {
+ font-size: 1rem;
+  line-height: 1.5;
+  color: var(--dark-color);
+  margin: 0;
+  padding: 0 0.5rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.benefits {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.benefits li {
+  font-size: .9rem;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+}
+
+.benefits li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.chooseBtn {
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  font-weight: 550;
+  font-size: 1rem;
+  padding: 0.5rem 0.7rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+.chooseBtn:hover {
+  background-color: #eb7b52;
+}
+
+.buttons {
+  margin-top: auto;
+  display: flex;
+  gap: .8rem;
+}
+
