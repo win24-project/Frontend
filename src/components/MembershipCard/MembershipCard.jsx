@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './MembershipCard.module.css';
 
 const CheckIcon = ({ size = 18, color = "#03c9e4" }) => (
@@ -20,47 +20,163 @@ const CheckIcon = ({ size = 18, color = "#03c9e4" }) => (
 );
 
 const MembershipCard = () => {
+  const [flipped, setFlipped] = useState(null);
+  const [memberships, setMemberships] = useState([]);
+  const [selectedDetails, setSelectedDetails] = useState(null);
+  const [error, setError] = useState(null);
+  const [message, setMessage] = useState(null);
+
+  useEffect(() => {
+    const fetchMemberships = async () => {
+      try {
+        const res = await fetch("https://group-project-authservice-ebbpd0c8g2fabqdr.swedencentral-01.azurewebsites.net/api/membership");
+        const data = await res.json();
+        setMemberships(data);
+      } catch (err) {
+        console.error("Failed to fetch memberships", err);
+      }
+    };
+    fetchMemberships();
+  }, []);
+
+  const fetchDetails = async (id) => {
+    try {
+      setMessage(null);
+      setError(null);
+
+      const res = await fetch(
+        `https://group-project-authservice-ebbpd0c8g2fabqdr.swedencentral-01.azurewebsites.net/api/membershipdetails/${id}`
+      );
+
+      if (!res.ok) {
+        throw new Error("Failed to fetch details");
+      }
+
+      const data = await res.json();
+      setSelectedDetails(data);
+
+    } catch (err) {
+      console.error("Failed to fetch details", err);
+      setError("Details are not available right now.");
+    }
+  };
+
+
+  const handleSelect = async (priceId) => {
+    try {
+      const response = await fetch(
+        `https://group-project-paymentservice-eyh8h2ewfqhvgddc.swedencentral-01.azurewebsites.net/api/CheckOut?priceId=${priceId}&mode=subscription`,
+        {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+          }
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Checkout failed: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (data?.url) {
+        window.location.href = data.url;
+      } else {
+        setError("No checkout URL returned.");
+      }
+    } catch (err) {
+      console.error("Checkout error:", err);
+      setError("Failed to start checkout. Try again.");
+    }
+  };
+
   return (
     <div className={styles.membershipWrapper}>
       <h2>Choose your membership</h2>
       <p>You need to select a membership plan before you can continue using our platform</p>
 
+      {error && <p className={styles.error}>{error}</p>}
+      {message && <p className={styles.success}>{message}</p>}
+
       <div className={styles.cardContainer}>
-        {/* Basic Plan */}
-        <div className={styles.card}>
-          <h2>Basic</h2>
-          <p className={styles.price}>$ / month</p>
-          <ul className={styles.benefits}>
-            <li><CheckIcon />Access to gym equipment</li>
-            <li><CheckIcon />1 free personal training session</li>
-            <li><CheckIcon />Access during reception hours</li>
-          </ul>
-          <button className={styles.chooseBtn}>Select</button>
-        </div>
+        {memberships.map((plan) => (
+          <div
+            key={plan.id}
+            className={`${styles.card} ${flipped === plan.id ? styles.flipped : ""}`}
+          >
+            <div className={styles.cardInner}>
+              {/* Front */}
+              <div className={styles.front}>
+                <h2>{plan.name}</h2>
+                <p className={styles.price}>${plan.price} / month</p>
+                <p className={styles.introText}>{plan.description}</p>
+                <div className={styles.buttons}>
+                  {plan.name === "Basic" && (
+                    <button
+                      className={styles.chooseBtn}
+                      onClick={() => handleSelect("price_1SBYqpPZLXb0VQaIu5bHdpEW")}
+                    >
+                      Select
+                    </button>
+                  )}
+                  {plan.name === "Standard" && (
+                    <button
+                      className={styles.chooseBtn}
+                      onClick={() => handleSelect("price_1SBC2qPZLXb0VQaIKiKGmL61")}
+                    >
+                      Select
+                    </button>
+                  )}
+                  {plan.name === "Premium" && (
+                    <button
+                      className={styles.chooseBtn}
+                      onClick={() => handleSelect("price_1SBC34PZLXb0VQaIsVYINbGc")}
+                    >
+                      Select
+                    </button>
+                  )}
+                  <button
+                    onClick={() => {
+                      fetchDetails(plan.id);
+                      setFlipped(plan.id);
+                    }}
+                    className={styles.chooseBtn}
+                  >
+                    Details
+                  </button>
+                </div>
+              </div>
 
-        {/* Standard Plan */}
-        <div className={styles.card}>
-          <h2>Standard</h2>
-          <p className={styles.price}>$ / month</p>
-          <ul className={styles.benefits}>
-            <li><CheckIcon />Everything in basic</li>
-            <li><CheckIcon />Unlimited group classes</li>
-            <li><CheckIcon />Free coffee & drinks</li>
-          </ul>
-          <button className={styles.chooseBtn}>Select</button>
-        </div>
+              {/* Back */}
+              <div className={styles.back}>
+                <h2>{plan.name} Details</h2>
+                <p className={styles.price}>${plan.price} / month</p>
 
-        {/* Premium Plan */}
-        <div className={styles.card}>
-          <h2>Premium</h2>
-          <p className={styles.price}>$ / month</p>
-          <ul className={styles.benefits}>
-            <li><CheckIcon />Everything in standard</li>
-            <li><CheckIcon />24/7 access</li>
-            <li><CheckIcon />Personal workout plan</li>
-          </ul>
-          <button className={styles.chooseBtn}>Select</button>
-        </div>
+                {selectedDetails && selectedDetails.id === plan.id ? (
+                  <ul className={styles.benefits}>
+                    {selectedDetails.benefits?.map((b, i) => (
+                      <li key={i}>
+                        <CheckIcon /> {b}
+                      </li>
+                    ))}
+                  </ul>
+                ) : error ? (
+                  <p>{error}</p>
+                ) : (
+                  <p>Loading details...</p>
+                )}
+
+                <button
+                  onClick={() => setFlipped(null)}
+                  className={styles.chooseBtn}
+                >
+                  Back
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   )
