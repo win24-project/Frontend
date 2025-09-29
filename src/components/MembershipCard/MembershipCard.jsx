@@ -110,7 +110,15 @@ const MembershipCard = () => {
               <div className={styles.front}>
                 <h2>{plan.name}</h2>
                 <p className={styles.price}>${plan.price} / month</p>
-                <p className={styles.introText}>{plan.description}</p>
+                {plan.name === "Basic" && (
+                  <p className={styles.introText}> Kickstart your training with an affordable plan that keeps you motivated and moving forward.</p>
+                )}
+                {plan.name === "Standard" && (
+                  <p className={styles.introText}>Unlock more possibilities, the ideal plan if you’re ready to push your limits and enjoy extra freedom.</p>
+                )}
+                {plan.name === "Premium" && (
+                  <p className={styles.introText}>Experience the ultimate membership, full access, total flexibility, and a lifestyle upgrade that’s worth it.</p>
+                )}
                 <div className={styles.buttons}>
                   {plan.name === "Basic" && (
                     <button

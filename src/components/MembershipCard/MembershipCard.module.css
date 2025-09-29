@@ -18,22 +18,57 @@
 .cardContainer {
   display: flex;
   justify-content: center;
+  align-items: stretch;
   gap: 2rem;
   margin-top: 3rem;
 }
 
 .card {
+  width: 280px;
+  height: 360px;
+  perspective: 1000px;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card.flipped .cardInner {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  width: 280px;
-  transition: transform .2s;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+.front {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.back {
+  transform: rotateY(180deg);
 }
 
 .card h2 {
@@ -47,6 +82,18 @@
   font-size: 1.7rem;
   font-weight: bold;
   margin: .5rem 0 1.3rem 0;
+}
+
+.introText {
+ font-size: 1rem;
+  line-height: 1.5;
+  color: var(--dark-color);
+  margin: 0;
+  padding: 0 0.5rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 .benefits {
@@ -79,4 +126,8 @@
 
 .chooseBtn:hover {
   background-color: #eb7b52;
+}
+
+.buttons {
+  margin-top: auto;
 }
