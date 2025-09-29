@@ -20,6 +20,7 @@ export const NavBar = () => {
           <nav className={styles.nav}>
             <a href="/">Home</a>
             <a href="/classes">Classes</a>
+            <a href='/membership'>Membership</a>
             {isLoggedIn ? (
               <a href="/" onClick={handleLogout}>Log out</a>
             ) : (

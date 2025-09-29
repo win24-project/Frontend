@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-
+import { useAuth } from "../Context/AuthContext";
+import { useNavigate } from 'react-router';
 import styles from './MembershipCard.module.css';
 
 const CheckIcon = ({ size = 18, color = "#03c9e4" }) => (
@@ -26,15 +27,21 @@ const MembershipCard = () => {
   const [selectedDetails, setSelectedDetails] = useState(null);
   const [error, setError] = useState(null);
   const [message, setMessage] = useState(null);
+  const [ loading, setLoading ] = useState(false)
+  const { isLoggedIn } = useAuth()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchMemberships = async () => {
+      setLoading(true)
       try {
         const res = await fetch("https://group-project-authservice-ebbpd0c8g2fabqdr.swedencentral-01.azurewebsites.net/api/membership");
         const data = await res.json();
         setMemberships(data);
+        setLoading(false)
       } catch (err) {
         console.error("Failed to fetch memberships", err);
+        setLoading(false)
       }
     };
     fetchMemberships();
@@ -64,6 +71,10 @@ const MembershipCard = () => {
 
 
   const handleSelect = async (priceId) => {
+    if(!isLoggedIn) {
+      navigate('/login')
+      return
+    }
     try {
       const response = await fetch(
         `https://group-project-paymentservice-eyh8h2ewfqhvgddc.swedencentral-01.azurewebsites.net/api/CheckOut?priceId=${priceId}&mode=subscription`,
@@ -80,7 +91,6 @@ const MembershipCard = () => {
       }
 
       const data = await response.json();
-
       if (data?.url) {
         window.location.href = data.url;
       } else {
@@ -96,6 +106,7 @@ const MembershipCard = () => {
     <div className={styles.membershipWrapper}>
       <h2>Choose your membership</h2>
       <p>You need to select a membership plan before you can continue using our platform</p>
+      {loading && <p>Loding memberships...</p>}
 
       {error && <p className={styles.error}>{error}</p>}
       {message && <p className={styles.success}>{message}</p>}
