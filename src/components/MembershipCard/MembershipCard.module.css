@@ -65,6 +65,25 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .cardInner {
+  transform: rotateY(180deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+
 }
 
 .back {
@@ -81,7 +100,14 @@
 .price {
   font-size: 1.7rem;
   font-weight: bold;
-  margin: .5rem 0 1.3rem 0;
+  margin: 0;
+  color: var(--dark-color);
+}
+
+.introText {
+  margin: 0;
+  text-align: left;
+  font-size: .9rem;
 }
 
 .introText {
@@ -104,10 +130,16 @@
 }
 
 .benefits li {
+  font-size: .9rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 0.5rem;
   color: var(--dark-color);
+}
+
+.benefits li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .chooseBtn {
@@ -130,4 +162,7 @@
 
 .buttons {
   margin-top: auto;
+  display: flex;
+  gap: .8rem;
 }
+

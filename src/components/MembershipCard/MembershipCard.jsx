@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+
 import styles from './MembershipCard.module.css';
 
 const CheckIcon = ({ size = 18, color = "#03c9e4" }) => (
@@ -185,6 +186,7 @@ const MembershipCard = () => {
             </div>
           </div>
         ))}
+
       </div>
     </div>
   )

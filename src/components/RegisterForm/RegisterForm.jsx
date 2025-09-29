@@ -78,7 +78,7 @@ const RegisterForm = () => {
     <div className={styles.registerWrapper}>
       <form className={styles.form} onSubmit={handleSubmit} noValidate>
         <h2 className={styles.title}>Become a member</h2>
-        <p className={styles.infoText}>Start your membership today from $39/month and unlock all our classes!</p>
+        <p className={styles.infoText}>Start your membership today from $19/month and unlock all our classes!</p>
 
         <div className={styles.field}>
           <label>Email</label>
