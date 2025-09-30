@@ -9,6 +9,8 @@ import ConfirmEmail from './pages/ConfirmEmail';
 import ResendConfirmationEmail from './pages/ResendConfirmationEmail';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
+import SubscriptionSuccessPage from './pages/SubscriptionSuccessPage';
+
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
       <Route path='/resend-email-confirmation' element={<ResendConfirmationEmail />}/>
       <Route path='/reset-password' element={<ResetPasswordPage />}/>
       <Route path='/forgot-password' element={<ForgotPasswordPage />}/>
+      <Route path='/success' element={<SubscriptionSuccessPage/>}/>
+
     </Routes>
   )
 }
