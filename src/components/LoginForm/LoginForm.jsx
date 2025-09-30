@@ -109,6 +109,7 @@ const LoginForm = () => {
 
         <div className={styles.redirectLogin}>
           <p>Confirm email: <a href="/resend-email-confirmation">Resend email confirmation</a></p>
+          <p>Forgot your password?: <a href="/forgot-password">Restore password</a></p>
           <p>Don't have an account? <a href="/register">Sign up here</a></p>
         </div>
       </form>
