@@ -5,6 +5,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userRole, setUserRole] = useState('');
+  const [ hasInitPayment, setHasInitPayment ] = useState(null)
 
   const extractRoleFromToken = (token) => {
     const payload = JSON.parse(atob(token.split('.')[1]));
@@ -32,7 +33,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, logout, userRole }}>
+    <AuthContext.Provider value={{ isLoggedIn, login, logout, userRole, hasInitPayment, setHasInitPayment }}>
       {children}
     </AuthContext.Provider>
   );

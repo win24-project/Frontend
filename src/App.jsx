@@ -10,16 +10,19 @@ import ResendConfirmationEmail from './pages/ResendConfirmationEmail';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import SubscriptionSuccessPage from './pages/SubscriptionSuccessPage';
+import HasInitPayment from './guards/HasInitPayment'
 
 
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<Home/>} />
+      <Route element={<HasInitPayment/>}>
+        <Route path='/classes' element={<GymClasses/>}/>
+        <Route path='/' element={<Home/>} />
+      </Route>
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/login' element={<Login/>}/>
-      <Route path='/classes' element={<GymClasses/>}/>
       <Route path='/membership' element={<SelectMembership />}/>
       <Route path='/confirm-email' element={<ConfirmEmail />}/>
       <Route path='/resend-email-confirmation' element={<ResendConfirmationEmail />}/>

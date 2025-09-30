@@ -9,7 +9,7 @@ const LoginForm = () => {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login, setHasInitPayment } = useAuth();
 
   const validateForm = () => {
     const newErrors = {};
@@ -53,7 +53,9 @@ const LoginForm = () => {
         const data = await response.json();
         console.log("Login successful:", data);
         login(data.token);
+        setHasInitPayment(data.hasInitilizedPayment)
         navigate("/");
+        
       } else {
           const errorText = await response.text();
           console.log("Login failed: " + errorText);
