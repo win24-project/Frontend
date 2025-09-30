@@ -24,6 +24,28 @@
     margin: 1.5rem 0 0 4rem;
 }
 
+.flex1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 3rem; */
+}
+
+.addButton {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: .6rem;
+    padding: .7rem 1rem;
+    font-size: var(--text);
+    transition: background-color 0.3s ease;
+}
+
+    .addButton:hover {
+        cursor: pointer;
+        background-color: var(--highlight);
+    }
+
+
 
 
 

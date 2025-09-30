@@ -1,0 +1,112 @@
+.modal {
+    z-index: 20;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000049;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+
+    .modalContent {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70dvw;
+        max-width: 550px;
+        background-color: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 4px 3px rgba(196, 196, 196, 0.1);
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        font: var(--heading-big);
+        margin-bottom: 3rem;
+    }
+}
+
+.addButton {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: .6rem;
+    margin-top: 2rem;
+    padding: .7rem 1rem;
+    font-size: var(--text);
+    transition: background-color 0.3s ease;
+}
+
+    .addButton:hover {
+        cursor: pointer;
+        background-color: var(--highlight);
+    }
+
+.btnClose {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #ff00002f;
+    color: #a50000;
+    border: none;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .btnClose:hover {
+        background-color: #ff00004d;
+    }
+    
+
+form {
+    width: 100%;
+}
+
+    form input,
+    form select,
+    form textarea {
+        width: 100%;
+        font-size: 1em;
+        padding: .5rem 1rem;
+        border-radius: 16px;
+        border: 1px solid #000;
+        outline: none;
+        transition: border-color 0.1s ease-in-out;
+        box-sizing: border-box;
+    }
+
+        form input:focus,
+        form select:focus,
+        form textarea:focus {
+            border: 1px solid #0000007e;
+        }
+
+        form input::placeholder,
+        form select::placeholder,
+        form textarea::placeholder {
+            color: #000;
+            font-size: 0.9em;
+        }
+
+.formGroup {
+    display: grid;
+    gap: 0.2rem;
+    margin-bottom: 1.2rem;
+    width: 100%;
+}
+
+
+
