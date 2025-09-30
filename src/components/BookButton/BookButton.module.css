@@ -16,7 +16,7 @@
   background-color: var(--highlight);
 }
 
-.book-button-container {
+.bookButtonContainer {
   display: flex;
   align-items: center;
   gap: 1rem;

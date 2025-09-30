@@ -29,13 +29,14 @@ export default function BookButton({ gymClassId }) {
             const response = await fetch(`https://group-project-bookingservice-f9bdbnftb0c6g2aa.swedencentral-01.azurewebsites.net/api/UserBooking`, 
                 { method: "POST", 
                   headers: {
-                    Authorization: `Bearer ${accessToken}`
+                    Authorization: `Bearer ${accessToken}`,
+                    "Content-Type": "application/json"
                   },
                   body: JSON.stringify({
                     gymClassId: gymClassId
                   })
                 });
-            if(response.status === 403 ||  response.status === 403) {
+            if(response.status === 401 ||  response.status === 403) {
                 navigate('/login') 
                 return
             }
@@ -52,8 +53,8 @@ export default function BookButton({ gymClassId }) {
     }
 
     return (
-        <div className={styles["book-button-container"]}>
-            <button className={styles["book-button"]} onClick={() => handleBooking(gymClassId)} disabled={loading}> <span>{loading ? "Booking..." : "Book"}</span></button>
+        <div className={styles.bookButtonContainer}>
+            <button className={styles.bookButton} onClick={() => handleBooking(gymClassId)} disabled={loading}> <span>{loading ? "Booking..." : "Book"}</span></button>
             {message && <div>{message}</div>}
             {error && <div>{error}</div>}
         </div>
