@@ -1,8 +1,100 @@
 .footer {
-
   width: 100%;
-  height: 80px;
-  background: var(--primary-color); 
+  background: var(--primary-color);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Översta sektionen (Om oss / Länkar / Kontakt) */
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 30px 40px;
+  background: #df8f44; /* ljusare än primary */
+}
+
+/* --- OM OSS --- */
+.about {
+  flex: 2;
+  text-align: left;
+  max-width: 450px;
+}
+
+.about h3 {
+  margin-bottom: 6px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.about p {
+  line-height: 1.4;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* --- LÄNKAR --- */
+.links {
+  flex: 1;
+  text-align: left;
+  min-width: 180px;
+}
+
+.links h3 {
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links li {
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.links li:hover {
+  text-decoration: underline;
+  color: #eee;
+}
+
+/* --- KONTAKT / ÖPPETTIDER --- */
+.links p {
+  margin: 2px 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.contact p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 3px 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.contact svg {
+  flex-shrink: 0;
+  color: #fff;
+  opacity: 0.9;
+}
+
+
+/* --- NEDRE SEKTIONEN --- */
+.bottomSection {
   text-align: center;
-  z-index: 10;
+  padding: 12px;
+  background: var(--primary-color);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.85rem;
+  opacity: 0.9;
 }
