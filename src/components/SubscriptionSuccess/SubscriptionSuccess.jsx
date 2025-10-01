@@ -4,8 +4,9 @@ import { useAuth } from "../Context/AuthContext";
 
 function SubscriptionSuccess() {
   const { setHasInitPayment } = useAuth();
-  useEffect(() => {
+ useEffect(() => {
     setHasInitPayment(true);
+    localStorage.setItem("hasInitPayment", true);
   }, []);
   return (
     <div className={styles.container}>
