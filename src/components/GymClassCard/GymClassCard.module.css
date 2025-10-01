@@ -10,9 +10,11 @@
     grid-template-rows: min-content min-content min-content auto min-content;
     gap: .6rem;
     position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-    :hover {
-        cursor: pointer;
+    &:hover {
+        cursor: default;
+        transform: translateY(-4px);
     }
 }
 

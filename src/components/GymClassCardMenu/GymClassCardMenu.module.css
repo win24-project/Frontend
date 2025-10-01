@@ -1,0 +1,51 @@
+.cardMenu {
+    background-color: #00000041;
+    position: absolute;
+    top: 1.8rem;
+    left: 1.8rem;
+    border-radius: .6rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.dots {
+    color: #fff;
+    font-size: 30px;
+    position: relative;
+}
+
+.link {
+    padding: .3rem;
+    border-radius: .5rem;
+    transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+.link1:hover {
+    background-color: rgba(0, 0, 0, 0.11);
+}
+
+.link2:hover {
+    background-color: rgb(255, 153, 153);
+    color: rgb(253, 62, 62);
+}
+
+.cardMenuNav {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.863);
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    top: 40px;
+    left: 0px;
+    width: 80px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.3), 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.horizontalDivider {
+    border-top: 1px solid #000;
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+}

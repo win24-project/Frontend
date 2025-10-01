@@ -15,9 +15,8 @@ const GymClassModal = ({isOpen, onClose, onGymClassAdded}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const token = localStorage.getItem("token");
-        console.log("Token:", token);
         if (!token) {
-            alert("No token found. Please log in as Admin.");
+            // alert("No token found. Please log in as Admin.");
             return;
         }
         const newGymClass = {
@@ -47,6 +46,7 @@ const GymClassModal = ({isOpen, onClose, onGymClassAdded}) => {
                 setDescription("");
                 setInstructor("");
                 setNumberOfParticipants("");
+                alert("Class has been created successfully");
                 onClose();
                 onGymClassAdded();
             }
