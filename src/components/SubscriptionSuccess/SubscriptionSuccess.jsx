@@ -1,6 +1,12 @@
+import { useEffect } from 'react';
 import styles from './SubscriptionSuccess.module.css'
+import { useAuth } from "../Context/AuthContext"; 
 
 function SubscriptionSuccess() {
+  const { setHasInitPayment } = useAuth();
+  useEffect(() => {
+    setHasInitPayment(true);
+  }, [setHasInitPayment]);
   return (
     <div className={styles.container}>
       <div className={styles.card}>
