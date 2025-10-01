@@ -6,7 +6,7 @@ function SubscriptionSuccess() {
   const { setHasInitPayment } = useAuth();
   useEffect(() => {
     setHasInitPayment(true);
-  }, [setHasInitPayment]);
+  }, []);
   return (
     <div className={styles.container}>
       <div className={styles.card}>
