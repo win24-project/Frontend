@@ -11,12 +11,13 @@ body {
 }
 :root {
 /* colors */
---primary-color: #FF6B35;
---secondary-color: #2D3142;
---accent: #BFC0C0;
---highlight: #D6D6D6;
---dark-color: #0E0E0E;
---error: #dc2626;
+--primary-color: #00BFFF;      /* Skyblue – för knappar, länkar, CTA */
+  --secondary-color: #2A2A2A;    /* Mörk bakgrund */
+  --accent: #3C3C3C;             /* Lite ljusare mörkgrå för sektioner/bakgrundsdelar */
+  --highlight: #505050;          /* Hover-effekter, borders eller mindre element */
+  --text-color: #E0E0E0;         /* Ljus text mot mörk bakgrund */
+  --dark-color: #1A1A1A;         /* Extra mörk bakgrund eller text */
+  --error: #FF4C4C;              /* Stark röd för felmeddelanden */
 /* typeography */
 --font-family:"Roboto", sans-serif; 
 --heading-extra-big: 900 2rem var(--font-family); 
