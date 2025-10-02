@@ -31,7 +31,7 @@ function App() {
       <Route path='/success' element={<SubscriptionSuccessPage/>}/>
 
     </Routes>
-  )
+  );
 }
 
 export default App

@@ -1,10 +1,14 @@
+import { useEffect, useState } from 'react'
 import BurgerMenu from '../BurgerMenu/BurgerMenu'
 import styles from './NavBar.module.css'
 import { useAuth } from "../Context/AuthContext";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
+import styles from "./NavBar.module.css";
+import { useNavigate } from "react-router-dom";
 
 export const NavBar = () => {
-
   const { isLoggedIn, logout } = useAuth();
+  const navigate = useNavigate();
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -19,7 +23,8 @@ export const NavBar = () => {
           <BurgerMenu/>
           <nav className={styles.nav}>
             <a href="/">Home</a>
-            <a href="/classes">Classes</a>
+            <a href="/contact">Contact</a>
+            <a href="/klasser">Pass</a>
             {isLoggedIn ? (
               <a href="/" onClick={handleLogout}>Log out</a>
             ) : (
