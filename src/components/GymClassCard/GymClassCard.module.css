@@ -2,13 +2,32 @@
     background-color: #fff;
     color: #000;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4), 1px 1px 10px rgba(0, 0, 0, 0.2);
-    padding: 12px;
+    padding: 16px;
     border-radius: 1rem;
-    width: 275px;
-    height: 345px;
+    width: 350px;
+    height: 420px;
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: min-content min-content min-content auto min-content;
     gap: .6rem;
+    position: relative;
+
+    :hover {
+        cursor: pointer;
+    }
+}
+
+.cardFlex1 {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 3rem; */
+}
+
+.cardFlex2 {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    
+    /* gap: 3rem; */
 }
 
 .cardImage {
@@ -23,13 +42,50 @@
 
 .cardTitle {
     font-family: var(--font-family);
+    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
 }
 
-/* .cardInfo {
+.cardDate {
+    font-family: var(--font-family);
+    font-size: 12px;
+}
+.cardLocation {
+    font-family: var(--font-family);
+    font-size: 12px;
+}
+.cardDescription {
+    font-family: var(--font-family);
+    margin: 0.6rem 0 0 0;
+    font-size: 14px;
+}
+.cardTrainer {
+    font-family: var(--font-family);
+    margin-left: .7rem;
+    font-size: 14px;
+}
+.cardMaxParticipants {
+    font-family: var(--font-family);
+    font-size: 14px;
+    position: absolute;
+    right: 35px;
+    top: 30px;
+    background-color: #0000004d;
+    color: #fff;
+    padding: .3rem;
+    border-radius: .5rem;
+}
 
-} */
 
-/* .cardDateTime {
-    display: flex;
-    gap: 1rem;
+
+
+/*Kommentera tillbaka detta när en userstory för responsivitet är fixad någon vill fixa det*/
+
+/* @media (max-width: 768px) {
+    .card {
+        width: 280px;
+        height: 350px;
+        grid-template-rows: min-content min-content min-content auto min-content;
+    }
 } */

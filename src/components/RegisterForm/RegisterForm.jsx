@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import styles from './RegisterForm.module.css';
-import { useNavigate } from 'react-router';
 
 const RegisterForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState({});
-  const navigate = useNavigate();
 
   const validateForm = () => {
     const newErrors = {};
@@ -62,7 +60,7 @@ const RegisterForm = () => {
       if (response.ok) {
         const data = await response.json();
         console.log("Signup successful:", data);
-        navigate("/login");
+        alert("Signup Successful, an email confirmation link is sent to your email");
       } else {
         const errorText = await response.text();
         console.log("Signup failed:", errorText);
@@ -78,7 +76,7 @@ const RegisterForm = () => {
     <div className={styles.registerWrapper}>
       <form className={styles.form} onSubmit={handleSubmit} noValidate>
         <h2 className={styles.title}>Become a member</h2>
-        <p className={styles.infoText}>Start your membership today from $39/month and unlock all our classes!</p>
+        <p className={styles.infoText}>Start your membership today from $19/month and unlock all our classes!</p>
 
         <div className={styles.field}>
           <label>Email</label>

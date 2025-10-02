@@ -4,17 +4,45 @@
 }
 
 .cardGrid {
-    width: calc(100dvw - 323px);
+    width: calc(100dvw - 240px);
+    /* width: 100dvw; */
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(299px, 1fr));
+    grid-template-columns: repeat(auto-fill, 382px);
+    /* grid-auto-rows: 420px; */
+    /* grid-template-columns: repeat(auto-fill, minmax(299px, 1fr)); */
     /* grid-template-columns: 1fr 1fr 1fr; */
-    gap: 1.5rem;
-    /* padding: 2rem; */
-    place-items: center;
+    gap: 2rem;
+    padding: 2rem;
+
+    /* place-items: center; */
+    justify-content: center;
     
 }
 
 .heading {
     font: var(--heading-big);
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0 0 4rem;
 }
+
+
+
+
+
+/*Kommentera tillbaka detta när en userstory för responsivitet är fixad någon vill fixa det*/
+
+/* @media (max-width: 768px) {
+    .container {
+        padding: 0;
+        width: 100dvw;
+        justify-items: center;
+    }
+
+    .cardGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .heading {
+        font: var(--heading-big);
+        margin: 1.5rem 0 0 0;
+    }
+} */
