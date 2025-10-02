@@ -43,7 +43,7 @@ const Home = () => {
             <div
               key={p.id}
               className={styles.passCard}
-              onClick={() => navigate(`/pass/${p.id}`)}
+                onClick={() => navigate('/GymClasses')}
               style={{ cursor: "pointer" }}
             >
               <img src={p.img} alt={p.title} className={styles.passImage} />

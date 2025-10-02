@@ -15,21 +15,68 @@
 
 .header .logo {
   margin: 0;
-  font: var(--heading-big)
+  font: var(--heading-big);
+  color: white;
+  cursor: pointer;
 }
+
 .nav {
-    display: none;
+  display: none;
 }
-@media(min-width: 920px) {
-    .nav {
-    display: block;
-    }
-    .nav a {
-        font: var(--heading-medium);
-        margin-left: 1rem;
-        transition: opacity 0.2s ease;
-    }
-    .nav a:hover {
+
+@media (min-width: 920px) {
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav a {
+    font: var(--heading-medium);
+    margin-left: 1rem;
+    transition: opacity 0.2s ease;
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav a:hover {
     opacity: 0.8;
-    }
+  }
+}
+
+/* Profilsektion */
+.profileSection {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+.logoutBtn {
+  margin-left: 1rem;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 0.3rem 0.8rem;
+  color: white;
+  font: var(--heading-small);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.logoutBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
 }

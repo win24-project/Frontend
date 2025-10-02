@@ -1,0 +1,66 @@
+.profilePage {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.profileCard,
+.subscriptionCard {
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.profileCard h2,
+.subscriptionCard h2 {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+p {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+strong {
+  color: var(--primary-color);
+}
+
+.status {
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.active {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.inactive {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  margin-top: 3rem;
+}
