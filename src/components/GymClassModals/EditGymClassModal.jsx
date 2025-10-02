@@ -10,6 +10,7 @@ const EditGymClassModal = ({isOpen, onClose, onGymClassChanged, item}) => {
     const [description, setDescription] = useState("");
     const [instructor, setInstructor] = useState("");
     const [maxNumberOfParticipants, setNumberOfParticipants] = useState("");
+    const [error, setError] = useState({});
 
     const formatDate = (isoString) => {
         if (!isoString) return "";
@@ -27,6 +28,8 @@ const EditGymClassModal = ({isOpen, onClose, onGymClassChanged, item}) => {
     useEffect(() => {
 
     const fetchGymClassDetails = async () => {
+
+        
 
         try {
           const response = await fetch(`https://group-project-gymclassservice-dfbzd5dza7cxdnd6.swedencentral-01.azurewebsites.net/api/get/${item.id}`);
@@ -54,6 +57,33 @@ const EditGymClassModal = ({isOpen, onClose, onGymClassChanged, item}) => {
     fetchGymClassDetails();
   }, [item])
 
+    const validateFields = () => {
+
+        const newError = {}
+
+        if (!title) {
+            newError.title = "Title is required";
+        }
+        if (!dateAndTime) {
+            newError.dateAndTime = "Date and Time is required";
+        }
+        if (!location) {
+            newError.location = "Location is required";
+        }
+        if (!description) {
+            newError.description = "Description is required";
+        }
+        if (!instructor) {
+            newError.instructor = "Instructor is required";
+        }
+        if (!maxNumberOfParticipants) {
+            newError.maxNumberOfParticipants = "Max Number of Participants is required";
+        }
+
+        setError(newError);
+        return Object.keys(newError).length === 0;
+    }
+
     if (!isOpen) return null;
 
     const handleSubmit = async (e) => {
@@ -62,6 +92,9 @@ const EditGymClassModal = ({isOpen, onClose, onGymClassChanged, item}) => {
         console.log("Token:", token);
         if (!token) {
             // alert("No token found. Please log in as Admin.");
+            return;
+        }
+        if (!validateFields()) {
             return;
         }
         const editGymClass = {
@@ -111,9 +144,6 @@ const EditGymClassModal = ({isOpen, onClose, onGymClassChanged, item}) => {
         }
     }
 
-
-
-
   return (
     <>
             <div className={styles.modal}>
@@ -132,43 +162,43 @@ const EditGymClassModal = ({isOpen, onClose, onGymClassChanged, item}) => {
                         <div className={styles.formGroup}>
                             <label>Title</label>
                             <div className={styles.fieldGroup}>
-                                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}/>
-                                <span></span>
+                                <input type="text" className={error.title ? styles.errorFieldInput : undefined} value={title} onChange={(e) => setTitle(e.target.value)}/>
+                                {error.title && (<span className={styles.errorField}>{error.title}</span>)}
                             </div>
                         </div>
                         <div className={styles.formGroup}>
                             <label>Date and Time</label>
                             <div className={styles.fieldGroup}>
-                                <input type="datetime-local" value={dateAndTime} onChange={(e) => setDateAndTime(e.target.value)}/>
-                                <span></span>
+                                <input type="datetime-local" className={error.dateAndTime ? styles.errorFieldInput : undefined} value={dateAndTime} onChange={(e) => setDateAndTime(e.target.value)}/>
+                                {error.dateAndTime && (<span className={styles.errorField}>{error.dateAndTime}</span>)}
                             </div>
                         </div>
                         <div className={styles.formGroup}>
                             <label>Location</label>
                             <div className={styles.fieldGroup}>
-                                <input type="text" value={location} onChange={(e) => setLocation(e.target.value)}/>
-                                <span></span>
+                                <input type="text" className={error.location ? styles.errorFieldInput : undefined} value={location} onChange={(e) => setLocation(e.target.value)}/>
+                                {error.location && (<span className={styles.errorField}>{error.location}</span>)}
                             </div>
                         </div>
                         <div className={styles.formGroup}>
                             <label>Description</label>
                             <div className={styles.fieldGroup}>
-                                <textarea type="text" value={description} onChange={(e) => setDescription(e.target.value)}/>
-                                <span></span>
+                                <textarea type="text" className={error.description ? styles.errorFieldInput : undefined} value={description} onChange={(e) => setDescription(e.target.value)}/>
+                                {error.description && (<span className={styles.errorField}>{error.description}</span>)}
                             </div>
                         </div>
                         <div className={styles.formGroup}>
                             <label>Instructor</label>
                             <div className={styles.fieldGroup}>
-                                <input type="text" value={instructor} onChange={(e) => setInstructor(e.target.value)}/>
-                                <span></span>
+                                <input type="text" className={error.instructor ? styles.errorFieldInput : undefined} value={instructor} onChange={(e) => setInstructor(e.target.value)}/>
+                                {error.instructor && (<span className={styles.errorField}>{error.instructor}</span>)}
                             </div>
                         </div>
                         <div className={styles.formGroup}>
                             <label>Max Number of Participants</label>
                             <div className={styles.fieldGroup}>
-                                <input type="number" value={maxNumberOfParticipants} onChange={(e) => setNumberOfParticipants(e.target.value)}/>
-                                <span></span>
+                                <input type="number" className={error.maxNumberOfParticipants ? styles.errorFieldInput : undefined} value={maxNumberOfParticipants} onChange={(e) => setNumberOfParticipants(e.target.value)}/>
+                                {error.maxNumberOfParticipants && (<span className={styles.errorField}>{error.maxNumberOfParticipants}</span>)}
                             </div>
                         </div>
                         <button className={styles.addButton} type="submit"><span>Confirm Changes</span></button>
