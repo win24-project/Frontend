@@ -52,7 +52,6 @@ const LoginForm = () => {
       if (response.ok) {
         const data = await response.json();
         console.log("Login successful:", data);
-        console.log("whu", data.hasInitilizedPayment)
         login(data.token, data.hasInitilizedPayment);
         navigate("/");
         
