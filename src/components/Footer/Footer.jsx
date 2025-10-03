@@ -21,8 +21,8 @@ export const Footer = () => {
         <div className={styles.links}>
           <h3>Länkar</h3>
           <ul>
-            <li onClick={() => navigate('/Register')}>Bli medlem</li>
-            <li onClick={() => navigate('/GymClasses')}>Våra pass</li>
+            <li onClick={() => navigate('/register')}>Bli medlem</li>
+            <li onClick={() => navigate('/classes')}>Våra pass</li>
           </ul>
         </div>
 

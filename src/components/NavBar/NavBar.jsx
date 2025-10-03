@@ -18,8 +18,8 @@ export const NavBar = () => {
           <BurgerMenu/>
           <nav className={styles.nav}>
             <a href="/">Home</a>
-            <a href="/classes">Pass</a>
-            <a href="/profile">Profile</a>
+            <a href="/classes">Classes</a>
+            {isLoggedIn && <a href="/classes">Profile</a>}
             {isLoggedIn ? (
               <a href="/" onClick={handleLogout}>Log out</a>
             ) : (

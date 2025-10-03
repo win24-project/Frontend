@@ -13,7 +13,6 @@ import SubscriptionSuccessPage from './pages/SubscriptionSuccessPage';
 import HasInitPayment from './guards/HasInitPayment'
 import ProfilePage from './components/ProfilePage/ProfilePage';
 
-
 function App() {
   return (
     <Routes>
@@ -21,7 +20,7 @@ function App() {
         <Route path='/classes' element={<GymClasses/>}/>
         <Route path='/' element={<Home/>} />
       </Route>
-      <Route path='/contact' element={<Contact/>}/>
+      <Route path='/profile' element={<ProfilePage/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/membership' element={<SelectMembership />}/>
@@ -30,8 +29,6 @@ function App() {
       <Route path='/reset-password' element={<ResetPasswordPage />}/>
       <Route path='/forgot-password' element={<ForgotPasswordPage />}/>
       <Route path='/success' element={<SubscriptionSuccessPage/>}/>
-      <Route path='/profile' element={<ProfilePage/>}/>
-
     </Routes>
   );
 }
