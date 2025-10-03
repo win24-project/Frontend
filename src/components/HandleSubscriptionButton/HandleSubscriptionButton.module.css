@@ -1,0 +1,22 @@
+.container {
+  margin-top: 18px;
+}
+
+.confirmButton {
+  background-color: var(--primary-color);
+  font: var(--heading-big);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.confirmButton:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+}
+.error {
+  color: var(--error);
+  font: var(--heading-medium);
+}

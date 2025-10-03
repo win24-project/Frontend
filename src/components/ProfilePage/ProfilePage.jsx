@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './ProfilePage.module.css';
+import HandleSubscriptionButton from '../HandleSubscriptionButton/HandleSubscriptionButton';
 
 const ProfilePage = () => {
   const [user, setUser] = useState(null);
@@ -52,6 +53,7 @@ const ProfilePage = () => {
           </p>
         </div>
       )}
+      <HandleSubscriptionButton/>
     </div>
   );
 };

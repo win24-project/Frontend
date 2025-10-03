@@ -19,6 +19,7 @@ export const NavBar = () => {
           <nav className={styles.nav}>
             <a href="/">Home</a>
             <a href="/classes">Pass</a>
+            <a href="/profile">Profile</a>
             {isLoggedIn ? (
               <a href="/" onClick={handleLogout}>Log out</a>
             ) : (
