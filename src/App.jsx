@@ -11,6 +11,7 @@ import ResetPasswordPage from './pages/ResetPasswordPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import SubscriptionSuccessPage from './pages/SubscriptionSuccessPage';
 import HasInitPayment from './guards/HasInitPayment'
+import ProfilePage from './components/ProfilePage/ProfilePage';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <Route path='/reset-password' element={<ResetPasswordPage />}/>
       <Route path='/forgot-password' element={<ForgotPasswordPage />}/>
       <Route path='/success' element={<SubscriptionSuccessPage/>}/>
+      <Route path='/profile' element={<ProfilePage/>}/>
 
     </Routes>
   );
