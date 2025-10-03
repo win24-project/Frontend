@@ -26,7 +26,7 @@ const BurgerMenu = () => {
       { open && <nav className={styles.nav}>
         <a className={styles.link} href="/">Home</a>
         <a className={styles.link} href="/classes">Classes</a>
-        {isLoggedIn && <a href="/classes">Profile</a>}
+        {isLoggedIn && <a href="/profile">Profile</a>}
         {isLoggedIn ? (
           <a className={styles.link} href="/" onClick={handleLogout}>Log out</a>
         ) : (
