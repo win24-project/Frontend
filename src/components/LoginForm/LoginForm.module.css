@@ -56,7 +56,7 @@
 }
 
 .button:hover {
-  background-color: #eb7b52;
+  background-color: var(--secondary-color);
 }
 
 .redirectLogin {
